@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import StudentList from './components/StudentList';
+// import ClassInfo from './components/ClassInfo';
+
+// > > > > Our goal is to ensure that App is managing each student's isPresent data < < < < 
 
 function App() {
+  const studentData = [
+    {
+        id: 1,
+        name: 'Ada',
+        email: 'ada@dev.org',
+        isPresentData: false
+    },
+    {
+        id: 2,
+        name: 'Sue',
+        email: 'sue@dev.org',
+        isPresentData: false
+    },
+    {
+        id: 3,
+        name: 'Gary',
+        email: 'gary@dev.org',
+        isPresentData: false
+    }
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+        <h1>Attendance</h1>
+        <StudentList students={studentData}></StudentList>
+    </main>
   );
 }
 
